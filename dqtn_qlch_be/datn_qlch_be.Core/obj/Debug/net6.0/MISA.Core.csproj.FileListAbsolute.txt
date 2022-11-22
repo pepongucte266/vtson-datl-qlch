@@ -1,0 +1,14 @@
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\bin\Debug\net6.0\MISA.Core.deps.json
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\bin\Debug\net6.0\MISA.Core.dll
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\bin\Debug\net6.0\MISA.Core.pdb
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.csproj.AssemblyReference.cache
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.AssemblyInfoInputs.cache
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.AssemblyInfo.cs
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.csproj.CoreCompileInputs.cache
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.dll
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\refint\MISA.Core.dll
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.pdb
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\ref\MISA.Core.dll
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.Resources.ResourceVN.resources
+D:\MISA\WEB2022_04\BE\CSharp\MISA.Web04.VTSON.CukCuk\MISA.Core\obj\Debug\net6.0\MISA.Core.csproj.GenerateResource.cache
