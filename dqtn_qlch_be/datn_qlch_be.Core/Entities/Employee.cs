@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace datn_qlch_be.Core.Entities
 {
-    public class Customer
+    public class Employee
     {
         /// <summary>
         /// Khóa chính
         /// </summary>
         /// Created By: VTSON (23/11/2022)
-        public Guid CustomerId { get; set; }
+        public Guid EmployeeId { get; set; }
 
         /// <summary>
-        /// Tên khách hàng
+        /// Tên nhân viên
         /// </summary>
         /// Created By: VTSON (23/11/2022)
-        public string? CustomerName { get; set; }
+        public string? EmployeeName { get; set; }
 
         /// <summary>
         /// Ngày sinh
@@ -38,5 +38,10 @@ namespace datn_qlch_be.Core.Entities
         /// Created By: VTSON (23/11/2022)
         public string? PhoneNumber { get; set; }
 
+        /// <summary>
+        /// chức vụ
+        /// </summary>
+        /// Created By: VTSON (23/11/2022)
+        public int EmployeeRole { get; set; }
     }
 }
