@@ -1,0 +1,12 @@
+.qlch-dialog-header-menu {
+  align-items: flex-start;
+  padding-top: 24px;
+  .qlch-header-menu {
+    width: 350px;
+    position: absolute !important;
+    right: 0;
+    .qlch-button {
+      flex-direction: column;
+    }
+  }
+}
