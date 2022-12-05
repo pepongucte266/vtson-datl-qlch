@@ -164,97 +164,97 @@ namespace datn_qlch_be.Infrastructure.Repository
             return food;
         }
 
-        /// <summary>
-        /// Thêm mới vào db
-        /// <param name="food">món ăn</param>
-        /// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
-        /// </summary>
-        /// CreateBy: VTSON 25/07/2022
-        public int InsertFull(Food food, FoodFavoriteService[] foodFavoriteServices)
-        {
-            SqlConnection.Open();
-            using (MySqlTransaction transaction = SqlConnection.BeginTransaction())
-            {
-                try
-                {
-                    string query = BuildQuery(food, 7, 0);
+        ///// <summary>
+        ///// Thêm mới vào db
+        ///// <param name="food">món ăn</param>
+        ///// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
+        ///// </summary>
+        ///// CreateBy: VTSON 25/07/2022
+        //public int InsertFull(Food food, FoodFavoriteService[] foodFavoriteServices)
+        //{
+        //    SqlConnection.Open();
+        //    using (MySqlTransaction transaction = SqlConnection.BeginTransaction())
+        //    {
+        //        try
+        //        {
+        //            string query = BuildQuery(food, 7, 0);
 
-                    DynamicParameters parameters = new DynamicParameters();
-                    parameters.Add($"@$TableName", "Food");
-                    parameters.Add($"@$String", query);
-                    parameters.Add($"@$NewId", DbType.Guid, direction: ParameterDirection.Output);
-                    SqlConnection.Execute($"Proc_Insert", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
-                    var newId = parameters.Get<dynamic>("@$NewId");
-                    foreach (FoodFavoriteService foodFavoriteService in foodFavoriteServices)
-                    {
-                        foodFavoriteService.FoodId = newId;
-                        query = BuildQuery(foodFavoriteService, 4, 0);
-                        DynamicParameters FFSparameters = new DynamicParameters();
-                        parameters.Add($"@$TableName", "FoodFavoriteService");
-                        parameters.Add($"@$String", query);
-                        parameters.Add($"@$NewId", DbType.Guid, direction: ParameterDirection.Output);
-                        SqlConnection.Execute($"Proc_Insert", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
-                    }
+        //            DynamicParameters parameters = new DynamicParameters();
+        //            parameters.Add($"@$TableName", "Food");
+        //            parameters.Add($"@$String", query);
+        //            parameters.Add($"@$NewId", DbType.Guid, direction: ParameterDirection.Output);
+        //            SqlConnection.Execute($"Proc_Insert", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+        //            var newId = parameters.Get<dynamic>("@$NewId");
+        //            foreach (FoodFavoriteService foodFavoriteService in foodFavoriteServices)
+        //            {
+        //                foodFavoriteService.FoodId = newId;
+        //                query = BuildQuery(foodFavoriteService, 4, 0);
+        //                DynamicParameters FFSparameters = new DynamicParameters();
+        //                parameters.Add($"@$TableName", "FoodFavoriteService");
+        //                parameters.Add($"@$String", query);
+        //                parameters.Add($"@$NewId", DbType.Guid, direction: ParameterDirection.Output);
+        //                SqlConnection.Execute($"Proc_Insert", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+        //            }
 
-                    transaction.Commit();
-                    return 1;
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    return -1;
-                }
-            }
-        }
+        //            transaction.Commit();
+        //            return 1;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            transaction.Rollback();
+        //            return -1;
+        //        }
+        //    }
+        //}
 
-        /// <summary>
-        /// Cập nhật vào db
-        /// <param name="food">món ăn</param>
-        /// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
-        /// </summary>
-        /// CreateBy: VTSON 25/07/2022
-        public int UpdateFull(Food food, FoodFavoriteService[] foodFavoriteServices)
-        {
-            SqlConnection.Open();
-            using (MySqlTransaction transaction = SqlConnection.BeginTransaction())
-            {
-                try
-                {
-                    string query = BuildQuery(food, 7, 1);
+        ///// <summary>
+        ///// Cập nhật vào db
+        ///// <param name="food">món ăn</param>
+        ///// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
+        ///// </summary>
+        ///// CreateBy: VTSON 25/07/2022
+        //public int UpdateFull(Food food, FoodFavoriteService[] foodFavoriteServices)
+        //{
+        //    SqlConnection.Open();
+        //    using (MySqlTransaction transaction = SqlConnection.BeginTransaction())
+        //    {
+        //        try
+        //        {
+        //            string query = BuildQuery(food, 7, 1);
 
-                    DynamicParameters parameters = new DynamicParameters();
-                    parameters.Add($"@$TableName", "Food");
-                    parameters.Add($"@$String", query);
-                    SqlConnection.Execute($"Proc_Update", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+        //            DynamicParameters parameters = new DynamicParameters();
+        //            parameters.Add($"@$TableName", "Food");
+        //            parameters.Add($"@$String", query);
+        //            SqlConnection.Execute($"Proc_Update", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
 
-                    DynamicParameters parametersForDelete = new DynamicParameters();
-                    parametersForDelete.Add("$FoodId",food.FoodId);
-                    SqlConnection.Execute($"Proc_DeleteFoodFavoriteServiceByFoodId", param: parametersForDelete, transaction, commandType: CommandType.StoredProcedure);
+        //            DynamicParameters parametersForDelete = new DynamicParameters();
+        //            parametersForDelete.Add("$FoodId",food.FoodId);
+        //            SqlConnection.Execute($"Proc_DeleteFoodFavoriteServiceByFoodId", param: parametersForDelete, transaction, commandType: CommandType.StoredProcedure);
 
-                    foreach (FoodFavoriteService foodFavoriteService in foodFavoriteServices)
-                    {
-                        foodFavoriteService.FoodId = food.FoodId;
-                        query = BuildQuery(foodFavoriteService, 4, 0);
-                        DynamicParameters FFSparameters = new DynamicParameters();
-                        parameters.Add($"@$TableName", "FoodFavoriteService");
-                        parameters.Add($"@$String", query);
-                        parameters.Add($"@$NewId", DbType.Guid, direction: ParameterDirection.Output);
-                        SqlConnection.Execute($"Proc_Insert", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
-                    }
+        //            foreach (FoodFavoriteService foodFavoriteService in foodFavoriteServices)
+        //            {
+        //                foodFavoriteService.FoodId = food.FoodId;
+        //                query = BuildQuery(foodFavoriteService, 4, 0);
+        //                DynamicParameters FFSparameters = new DynamicParameters();
+        //                parameters.Add($"@$TableName", "FoodFavoriteService");
+        //                parameters.Add($"@$String", query);
+        //                parameters.Add($"@$NewId", DbType.Guid, direction: ParameterDirection.Output);
+        //                SqlConnection.Execute($"Proc_Insert", param: parameters, transaction, commandType: System.Data.CommandType.StoredProcedure);
+        //            }
 
-                    transaction.Commit();
-                    return 1;
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback();
-                    return -1;
-                } finally
-                {
-                    SqlConnection.Close();
-                }
-            }
-        }
+        //            transaction.Commit();
+        //            return 1;
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            transaction.Rollback();
+        //            return -1;
+        //        } finally
+        //        {
+        //            SqlConnection.Close();
+        //        }
+        //    }
+        //}
     }
 
 }

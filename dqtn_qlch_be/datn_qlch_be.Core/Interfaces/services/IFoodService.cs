@@ -20,19 +20,19 @@ namespace datn_qlch_be.Core.Interfaces.services
         /// Created By: VTSON (22/07/2022) 
         object GetFilter(int? pageNumber, int? pageSise, string? where, string? sort);
 
-        /// <summary>
-        /// Thêm mới vào db
-        /// <param name="food">món ăn</param>
-        /// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
-        /// </summary>
-        /// CreateBy: VTSON 25/07/2022
-        int InsertFull(Food food, FoodFavoriteService[] foodFavoriteServices);
-        /// <summary>
-        /// Cập nhật vào db
-        /// <param name="food"> món ăn</param>
-        /// <param name="foodFavoriteServices"> các sơ thích phục vụ</param>
-        /// </summary>
-        /// CreateBy: VTSON 25/07/2022
-        int UpdateFull(Food food, FoodFavoriteService[] foodFavoriteServices);
+        ///// <summary>
+        ///// Thêm mới vào db
+        ///// <param name="food">món ăn</param>
+        ///// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
+        ///// </summary>
+        ///// CreateBy: VTSON 25/07/2022
+        //int InsertFull(Food food, FoodFavoriteService[] foodFavoriteServices);
+        ///// <summary>
+        ///// Cập nhật vào db
+        ///// <param name="food"> món ăn</param>
+        ///// <param name="foodFavoriteServices"> các sơ thích phục vụ</param>
+        ///// </summary>
+        ///// CreateBy: VTSON 25/07/2022
+        //int UpdateFull(Food food, FoodFavoriteService[] foodFavoriteServices);
     }
 }
