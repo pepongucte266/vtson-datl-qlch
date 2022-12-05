@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from "vue-router";
-
+import TheSaleProductContent from "../components/content/TheSaleProductContent/TheSaleProductContent.vue"
+import TheReport from '../components/content/TheReport/TheReport.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // {
-    //   path: "/",
-    //   name: "home",
-    //   component: HomeView,
-    // },
+    {
+      path: "/",
+      name: "home",
+      component: TheSaleProductContent,
+    },
+    {
+      path: "/invoices",
+      name: "invoices",
+      component: TheReport,
+    },
     // {
     //   path: "/about",
     //   name: "about",

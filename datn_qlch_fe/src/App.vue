@@ -1,18 +1,34 @@
-<script setup lang="ts">
+<script lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import TheHeader from "./components/header/TheHeader/TheHeader.vue";
+import TheSaleControl from "./components/navbar/TheSaleControl/TheSaleControl.vue";
+export default {
+  components: {
+    TheHeader,
+    TheSaleControl
+  },
+};
 </script>
 
 <template>
-  <v-app>
-    <v-app-bar height="48" color="grey" elevation="0"></v-app-bar>
-    <v-navigation-drawer location="right" width="300" color="grey-lighten-1" permanent></v-navigation-drawer>
+  <v-app class="overflow-hidden">
+    <TheHeader></TheHeader>
+    <TheSaleControl></TheSaleControl>
     <v-main>
-      <v-card elevation="0" height="400px">
-      </v-card>
+      <v-container fluid class="qlch-content">
+        <router-view></router-view>
+      </v-container>
     </v-main>
   </v-app>
-
 </template>
 
-<style scoped>
+<style>
+html {
+  overflow-y: auto;
+}
+
+.qlch-content {
+  background-color: #EDEFF2;
+  height: 100%;
+}
 </style>
