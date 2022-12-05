@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "MISA.Infrastructure/1.0.0": {
+      "datn_qlch_be.Infrastructure/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.123",
-          "MISA.Core": "1.0.0",
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
-          "MySqlConnector": "2.1.11"
+          "MySqlConnector": "2.1.11",
+          "datn_qlch_be.Core": "1.0.0"
         },
         "runtime": {
-          "MISA.Infrastructure.dll": {}
+          "datn_qlch_be.Infrastructure.dll": {}
         }
       },
       "Dapper/2.0.123": {
@@ -804,20 +804,20 @@
           "System.Xml.ReaderWriter": "4.0.11"
         }
       },
-      "MISA.Core/1.0.0": {
+      "datn_qlch_be.Core/1.0.0": {
         "dependencies": {
           "Microsoft.AspNet.Mvc": "5.2.9",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
         },
         "runtime": {
-          "MISA.Core.dll": {}
+          "datn_qlch_be.Core.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "MISA.Infrastructure/1.0.0": {
+    "datn_qlch_be.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -1368,7 +1368,7 @@
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
     },
-    "MISA.Core/1.0.0": {
+    "datn_qlch_be.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

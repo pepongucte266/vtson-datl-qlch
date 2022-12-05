@@ -47,61 +47,61 @@ namespace datn_qlch_be.Core.Services
             return res;
         }
 
-        /// <summary>
-        /// Thêm mới vào db
-        /// <param name="food">món ăn</param>
-        /// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
-        /// </summary>
-        /// CreateBy: VTSON 25/07/2022
-        public int InsertFull(Food food, FoodFavoriteService[] foodFavoriteServices)
-        {
-            bool isValid = Validate("insert", food);
+        ///// <summary>
+        ///// Thêm mới vào db
+        ///// <param name="food">món ăn</param>
+        ///// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
+        ///// </summary>
+        ///// CreateBy: VTSON 25/07/2022
+        //public int InsertFull(Food food, FoodFavoriteService[] foodFavoriteServices)
+        //{
+        //    bool isValid = Validate("insert", food);
             
-            if (isValid)
-            {
-                var res = _repository.InsertFull(food, foodFavoriteServices);
-                return res;
-            }
-            else
-            {
-                throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
-            }
+        //    if (isValid)
+        //    {
+        //        var res = _repository.InsertFull(food, foodFavoriteServices);
+        //        return res;
+        //    }
+        //    else
+        //    {
+        //        throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
+        //    }
             
-        }
+        //}
 
-        /// <summary>
-        /// Cập nhật vào db
-        /// <param name="food">món ăn</param>
-        /// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
-        /// </summary>
-        /// CreateBy: VTSON 25/07/2022
-        public int UpdateFull(Food food, FoodFavoriteService[] foodFavoriteServices)
-        {
-            bool isValid = Validate("update", food);
+        ///// <summary>
+        ///// Cập nhật vào db
+        ///// <param name="food">món ăn</param>
+        ///// <param name="foodFavoriteServices">các sơ thích phục vụ</param>
+        ///// </summary>
+        ///// CreateBy: VTSON 25/07/2022
+        //public int UpdateFull(Food food, FoodFavoriteService[] foodFavoriteServices)
+        //{
+        //    bool isValid = Validate("update", food);
 
-            var listCheck = new List<Guid>();
-            foreach (FoodFavoriteService item in foodFavoriteServices)
-            {
-                if(listCheck.Contains((Guid)item.FavoriteServiceId))
-                {
-                    ErrorMessages.Add(Resources.ResourceVN.VN_ValidateError_FoodFavoriteIsDuplicate);
-                    throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
-                } else
-                {
-                    listCheck.Add((Guid)item.FavoriteServiceId);
-                }
-            }
+        //    var listCheck = new List<Guid>();
+        //    foreach (FoodFavoriteService item in foodFavoriteServices)
+        //    {
+        //        if(listCheck.Contains((Guid)item.FavoriteServiceId))
+        //        {
+        //            ErrorMessages.Add(Resources.ResourceVN.VN_ValidateError_FoodFavoriteIsDuplicate);
+        //            throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
+        //        } else
+        //        {
+        //            listCheck.Add((Guid)item.FavoriteServiceId);
+        //        }
+        //    }
 
-            if (isValid)
-            {
-                var res = _repository.UpdateFull(food, foodFavoriteServices);
-                return res;
-            }
-            else
-            {
-                throw new MISAValidateException("errors", ErrorMessages);
-            }
-        }
+        //    if (isValid)
+        //    {
+        //        var res = _repository.UpdateFull(food, foodFavoriteServices);
+        //        return res;
+        //    }
+        //    else
+        //    {
+        //        throw new MISAValidateException("errors", ErrorMessages);
+        //    }
+        //}
 
         protected override bool Validate(string mode, Food food)
         {
