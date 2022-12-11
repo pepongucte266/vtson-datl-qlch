@@ -1,11 +1,25 @@
 .the-sale-product-content {
   background-color: #fff;
+  height: 100%;
   .the-sale-product-search {
     .v-field__overlay {
       background-color: #fff;
     }
   }
-  .product-table-row{
+  .product-table-row {
     margin: 0;
+  }
+}
+
+.the-sale-product-list {
+ 
+  background-color: #EDEFF2 !important;
+  box-shadow: none !important;
+  .list-product-container{
+    box-shadow: none !important;
+    background-color: transparent;
+    .v-card{
+      cursor: pointer;
+    }
   }
 }

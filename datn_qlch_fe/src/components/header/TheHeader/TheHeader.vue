@@ -1,6 +1,6 @@
 <style scoped lang="scss" src="./TheHeader.scss"></style>
 <template>
-  <v-app-bar class="qlch-header px-4" height="48" color="grey" elevation="0">
+  <v-app-bar class="qlch-header px-4" height="56" color="grey" elevation="0">
     <v-row align="start">
       <v-col>
         <div>Bán hàng</div>

@@ -1,4 +1,4 @@
-import {defineComponent, reactive} from 'vue'
+import {defineComponent, ref,reactive} from 'vue'
 export default defineComponent({
   setup(props) {
     var items = reactive([
@@ -24,8 +24,10 @@ export default defineComponent({
         Quantity: 1
       }
     ])
+    var onboarding = ref(0)
     return {
-      items
+      items,
+      onboarding
     }
   }
 })

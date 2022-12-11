@@ -1,0 +1,15 @@
+.sale-control {
+  background-color: #EDEFF2 !important;
+  border: none;
+  .sale-control-content {
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    .btn-submit {
+      position: absolute;
+      width: 100%;
+      margin-bottom: 24px;
+      bottom: 0
+    }
+  }
+}
