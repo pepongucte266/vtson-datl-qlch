@@ -1,56 +1,56 @@
-import {defineComponent, ref,computed} from 'vue'
-import {  mdiApps} from "@mdi/js";
+import { defineComponent, ref, computed } from "vue";
+import { mdiApps } from "@mdi/js";
 export default defineComponent({
   props: {
-    showPopupHeaderMenu: Boolean
+    showPopupHeaderMenu: Boolean,
   },
-  setup(props,{emit}) {
+  setup(props, { emit }) {
     //Biến hiển thi popup
     var show = computed<boolean>({
-     get() {
-      return props.showPopupHeaderMenu;
-     },
-     set(value) {
-      emit('update:showPopupHeaderMenu',value)
-     }
-    })
-    
+      get() {
+        return props.showPopupHeaderMenu;
+      },
+      set(value) {
+        emit("update:showPopupHeaderMenu", value);
+      },
+    });
+
     const dataMenu = ref([
       {
-        name: 'Bán hàng',
+        name: "Bán hàng",
         icon: mdiApps,
-        link: "/"
+        link: "/",
       },
       {
-        name: 'DS hóa đơn',
+        name: "DS hóa đơn",
         icon: mdiApps,
-        link: "/invoices"
+        link: "/invoices",
       },
       {
-        name: 'Báo cáo',
+        name: "Báo cáo",
         icon: mdiApps,
-        link: "/"
+        link: "/",
       },
       {
-        name: 'Thu chi',
+        name: "Thu chi",
         icon: mdiApps,
-        link: "/"
+        link: "/",
       },
       {
-        name: 'Thu chi',
+        name: "Thu chi",
         icon: mdiApps,
-        link: "/"
+        link: "/",
       },
       {
-        name: 'Thu chi',
+        name: "Thu chi",
         icon: mdiApps,
-        link: "/"
-      }
-    ])
+        link: "/",
+      },
+    ]);
     return {
       show,
       dataMenu,
-      mdiApps
-    }
-  }
-})
+      mdiApps,
+    };
+  },
+});
