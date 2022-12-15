@@ -5,7 +5,7 @@ import TheSaleControl from "./components/navbar/TheSaleControl/TheSaleControl.vu
 export default {
   components: {
     TheHeader,
-    TheSaleControl
+    TheSaleControl,
   },
 };
 </script>
@@ -16,7 +16,7 @@ export default {
     <router-view name="right"></router-view>
     <v-main>
       <v-container fluid class="qlch-content">
-        <router-view></router-view>
+        <router-view> </router-view>
       </v-container>
     </v-main>
   </v-app>
@@ -28,7 +28,7 @@ html {
 }
 
 .qlch-content {
-  background-color: #EDEFF2;
+  background-color: #edeff2;
   height: 100%;
   padding-top: 0 !important;
 }

@@ -14,7 +14,6 @@ export default defineComponent({
         emit("update:showPopupHeaderMenu", value);
       },
     });
-
     const dataMenu = ref([
       {
         name: "Bán hàng",
