@@ -1,33 +1,31 @@
-import {defineComponent, ref,reactive} from 'vue'
+import {defineComponent,defineAsyncComponent , ref,reactive} from 'vue'
+import { useInventoryItemStore } from '@/stores'
+import type IInventoryItem from '@/interface/IInventoryItem'
 export default defineComponent({
-  setup(props) {
-    var items = reactive([
-      {
-        InventoryItemCode: 'CO',
-        InventoryItemName: 'coca',
-        Price: 100000,
-        UnitPrice:'lon',
-        Quantity: 2
-      },
-      {
-        InventoryItemCode: 'PS',
-        InventoryItemName: 'pepsi',
-        Price: 100000,
-        UnitPrice:'lon',
-        Quantity: 1
-      },
-      {
-        InventoryItemCode: 'FA',
-        InventoryItemName: 'fanta',
-        Price: 100000,
-        UnitPrice:'lon',
-        Quantity: 1
-      }
-    ])
+  setup() {
+    const inventoryItemStore = useInventoryItemStore()
     var onboarding = ref(0)
+    var dataPaging : IInventoryItem[][] = reactive([])
+    //Lấy danh sách hh 
+    
+    
+    async function loadData() {
+      await inventoryItemStore.getInventoryItemList()
+      for (let i = 1; i <=10; i++) {
+        dataPaging.push(await inventoryItemStore.getInventoryItemListPaging(i,10))
+      }
+    }
+
+    async function addInventoryItemToInvoice(inventoryItem: IInventoryItem) {
+      console.log('inventoryItem: ', inventoryItem.InventoryItemName);
+      
+    }
+    loadData()
     return {
-      items,
-      onboarding
+      inventoryItemStore,
+      dataPaging,
+      onboarding,
+      addInventoryItemToInvoice
     }
   }
 })

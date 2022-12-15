@@ -6,7 +6,7 @@ using datn_qlch_be.Core.Interfaces.services;
 
 namespace datn_qlch_be.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class InventoryItemController : QLCHBaseController<InventoryItem>
     {

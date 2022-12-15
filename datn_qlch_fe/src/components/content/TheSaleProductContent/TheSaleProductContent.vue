@@ -13,7 +13,7 @@
       <div class="the-sale-product-table">
         <v-row
           class="product-table-row"
-          v-for="item in items"
+          v-for="item in inventoryItemStore.inventoryItemOnSale"
           :key="item.InventoryItemName"
         >
           <v-col>{{ item.InventoryItemCode }}</v-col>
@@ -26,7 +26,7 @@
     </div>
     <v-app-bar height="350" location="bottom" class="the-sale-product-list">
       <v-window v-model="onboarding" show-arrows="hover">
-        <v-window-item v-for="n in 4" :key="`card-${n}`">
+        <v-window-item v-for="page,index in dataPaging" :key="`card-${index}`">
           <v-card
             elevation="2"
             height="350"
@@ -37,17 +37,18 @@
               height="145"
               width="235"
               class="d-flex flex-column justify-space-between ma-2 rounded-lg"
-              v-for="j in 10"
-              :key="j"
+              v-for="inventoryItem in page"
+              :key="inventoryItem.InventoryItemID"
+              @click="addInventoryItemToInvoice(inventoryItem)"
             >
               <v-img
-                src="https://picsum.photos/350/165?random"
+                :src="inventoryItem.InventoryItemImage"
                 max-height="115"
                 height="115"
                 class="grey darken-4"
               ></v-img>
               <div class="product-name ml-2">
-                Coca
+                {{ inventoryItem.InventoryItemName }}
               </div>
             </v-card>
           </v-card>
