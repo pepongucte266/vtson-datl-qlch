@@ -1,3 +1,5 @@
+import type IInvoiceDetail from "./IInvoiceDetail";
+
 export default interface IInvoice {
   InvoiceID: string;
   InvoiceNo: string;
@@ -8,4 +10,6 @@ export default interface IInvoice {
   PromotionID: string;
   DiscountAmount: number;
   DepositAmount: number;
+  EmployeeID?:string;
+  InvoiceDetails: IInvoiceDetail[];
 }

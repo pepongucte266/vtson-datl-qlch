@@ -6,20 +6,39 @@
       background-color: #fff;
     }
   }
-  .product-table-row {
-    margin: 0;
+  .the-sale-product-table {
+    overflow-y: auto;
+    max-height: 400px;
+    .product-table-row {
+      margin: 0;
+      .product-code {
+        overflow: hidden;
+      }
+    }
   }
 }
 
+
 .the-sale-product-list {
- 
-  background-color: #EDEFF2 !important;
+  background-color: #edeff2 !important;
   box-shadow: none !important;
-  .list-product-container{
+  .list-product-container {
     box-shadow: none !important;
     background-color: transparent;
-    .v-card{
+    .v-card {
       cursor: pointer;
     }
   }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #b0b0b0;
+  border: solid 3px #e6e6e6;
+  border-radius: 7px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: black;
 }

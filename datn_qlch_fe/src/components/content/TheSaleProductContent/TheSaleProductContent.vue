@@ -13,10 +13,10 @@
       <div class="the-sale-product-table">
         <v-row
           class="product-table-row"
-          v-for="item in inventoryItemStore.inventoryItemOnSale"
-          :key="item.InventoryItemName"
+          v-for="item in curentInvoiceDetail"
+          :key="item.InventoryItemID"
         >
-          <v-col>{{ item.InventoryItemCode }}</v-col>
+          <v-col class="product-code">{{ item.InventoryItemCode }}</v-col>
           <v-col>{{ item.InventoryItemName }}</v-col>
           <v-col>{{ item.Quantity }}</v-col>
           <v-col>{{ item.UnitPrice }}</v-col>
@@ -25,7 +25,7 @@
       </div>
     </div>
     <v-app-bar height="350" location="bottom" class="the-sale-product-list">
-      <v-window v-model="onboarding" show-arrows="hover">
+      <v-window v-model="onboarding" show-arrows="hover" v-if="dataPaging">
         <v-window-item v-for="page,index in dataPaging" :key="`card-${index}`">
           <v-card
             elevation="2"
@@ -52,6 +52,17 @@
               </div>
             </v-card>
           </v-card>
+        </v-window-item>
+      </v-window>
+      <v-window v-model="onboarding" show-arrows="hover" v-else>
+        <v-window-item >
+          <v-card
+            elevation="2"
+            height="350"
+            class="d-flex justify-center align-center flex-wrap ma-2 list-product-container"
+          >
+          </v-card>
+          Không có hàng hóa
         </v-window-item>
       </v-window>
     </v-app-bar>
