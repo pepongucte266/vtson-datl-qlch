@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using datn_qlch_be.Core.Entities;
 using datn_qlch_be.Core.Interfaces.repository;
 using datn_qlch_be.Core.Interfaces.services;
-using Newtonsoft.Json;
 
 namespace datn_qlch_be.Web.Controllers
 {
