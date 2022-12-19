@@ -37,7 +37,7 @@ namespace datn_qlch_be.Core.Services
         public int InsertService(Entity entity)
         {
 
-            bool isValid = Validate("insert", entity);
+            bool isValid = Validate(Enum.ValidateMode.Insert, entity);
             if (isValid)
             {
                 var res = Repository.Insert(entity);
@@ -60,7 +60,7 @@ namespace datn_qlch_be.Core.Services
         /// Created By: VTSON (20/07/2022)
         public int UpdateService(Entity entity)
         {
-            var isValid = Validate("update", entity);
+            var isValid = Validate(Enum.ValidateMode.Update, entity);
             if (isValid)
             {
                 var res = Repository.Update(entity);
@@ -78,7 +78,7 @@ namespace datn_qlch_be.Core.Services
         /// <param name="entity">Đối tượng</param>
         /// <returns>true: dữ liệu hợp lệ; false: dữ liệu không hợp lệ</returns>
         /// Created By: VTSON (20/07/2022)
-        protected virtual bool Validate(string mode, Entity entity) => true;
+        protected virtual bool Validate(Enum.ValidateMode mode, Entity entity) => true;
         #endregion
 
     }

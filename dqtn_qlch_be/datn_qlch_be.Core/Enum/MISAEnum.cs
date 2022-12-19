@@ -11,4 +11,10 @@ namespace datn_qlch_be.Core.Enum
         Available = 1 ,
         NotAvailable = 0
     }
+
+    public enum ValidateMode
+    {
+        Insert = 1 ,
+        Update = 2 ,
+    }
 }

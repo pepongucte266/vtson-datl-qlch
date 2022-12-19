@@ -18,7 +18,7 @@ namespace datn_qlch_be.Core.Entities
         /// Tên nhân viên
         /// </summary>
         /// Created By: VTSON (23/11/2022)
-        public string? EmployeeName { get; set; }
+        public string EmployeeName { get; set; } = String.Empty;
 
         /// <summary>
         /// Ngày sinh
@@ -36,12 +36,16 @@ namespace datn_qlch_be.Core.Entities
         /// sdt
         /// </summary>
         /// Created By: VTSON (23/11/2022)
-        public string? PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// chức vụ
         /// </summary>
         /// Created By: VTSON (23/11/2022)
-        public int EmployeeRole { get; set; }
+        public string Role { get; set; } = string.Empty;
+
+        public byte[]? PasswordHash { get; set; }
+        public byte[]? PasswordSalt { get; set; }
+
     }
 }
