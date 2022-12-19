@@ -47,7 +47,7 @@ namespace datn_qlch_be.Core.Interfaces.repository
         /// <param name="curentId"></param>
         /// <returns>true: đã tồn tại; false: không tồn tại</returns>
         /// Created By: VTSON (19/07/2022) 
-        bool IsExistByValue(string column, Guid? curentId, string value);
+        bool IsExistByValue(string column, string value);
 
     }
 }

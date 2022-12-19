@@ -103,7 +103,7 @@ namespace datn_qlch_be.Core.Services
         //    }
         //}
 
-        protected override bool Validate(string mode, Food food)
+        protected override bool Validate(Enum.ValidateMode mode, Food food)
         {
 
             if (food == null) return false;
@@ -127,20 +127,20 @@ namespace datn_qlch_be.Core.Services
             {
                 ErrorMessages.Add(Resources.ResourceVN.VN_ValidateError_FoodTaxNotEmpty);
             }
-            if (mode == "insert")
-            {
-                if (_repository.IsExistByValue("FoodCode", null, food.FoodCode))
-                {
-                    ErrorMessages.Add(Resources.ResourceVN.VN_ValidateError_FoodCodeExitsed);
-                }
-            }
-            else
-            {
-                if (_repository.IsExistByValue("FoodCode", food.FoodId, food.FoodCode))
-                {
-                    ErrorMessages.Add(Resources.ResourceVN.VN_ValidateError_FoodCodeExitsed);
-                }
-            }
+            //if (mode == "insert")
+            //{
+            //    if (_repository.IsExistByValue("FoodCode", null, food.FoodCode))
+            //    {
+            //        ErrorMessages.Add(Resources.ResourceVN.VN_ValidateError_FoodCodeExitsed);
+            //    }
+            //}
+            //else
+            //{
+            //    if (_repository.IsExistByValue("FoodCode", food.FoodId, food.FoodCode))
+            //    {
+            //        ErrorMessages.Add(Resources.ResourceVN.VN_ValidateError_FoodCodeExitsed);
+            //    }
+            //}
 
 
             return ErrorMessages.Count > 0 ? false : true;

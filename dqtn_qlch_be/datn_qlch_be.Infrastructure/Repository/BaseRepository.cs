@@ -104,12 +104,11 @@ namespace datn_qlch_be.Infrastructure.Repository
         /// <param name="curentId"></param>
         /// <returns>true: đã tồn tại; false: không tồn tại</returns>
         /// Created By: VTSON (19/07/2022) 
-        public bool IsExistByValue(string column, Guid? curentId, string value)
+        public bool IsExistByValue(string column, string value)
         {
             DynamicParameters parameters = new DynamicParameters();
             parameters.Add("@$TableName", _className);
             parameters.Add("@$Column", column);
-            parameters.Add("@$CurrentId", curentId);
             parameters.Add("@$Value", value);
             var isExits = SqlConnection.QueryFirstOrDefault("Proc_CheckExits", param: parameters, commandType: System.Data.CommandType.StoredProcedure);
             return isExits != null;
