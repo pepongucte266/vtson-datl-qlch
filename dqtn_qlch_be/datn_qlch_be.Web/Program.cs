@@ -58,6 +58,7 @@ builder.Services.AddScoped<IInventoryItemService, InventoryItemService>();
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+<<<<<<< HEAD
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => {
         options.TokenValidationParameters = new TokenValidationParameters
@@ -68,6 +69,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = false,
         };
     });
+=======
+
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
 
 var app = builder.Build();
 

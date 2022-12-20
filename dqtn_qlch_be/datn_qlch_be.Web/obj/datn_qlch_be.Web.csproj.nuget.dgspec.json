@@ -60,10 +60,13 @@
               "target": "Package",
               "version": "[6.25.1, )"
             },
+<<<<<<< HEAD
             "Swashbuckle.AspNetCore.Filters": {
               "target": "Package",
               "version": "[7.0.6, )"
             },
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[6.25.1, )"

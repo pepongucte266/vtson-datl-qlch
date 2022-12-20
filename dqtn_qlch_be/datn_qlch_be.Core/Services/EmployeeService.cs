@@ -1,9 +1,14 @@
 ﻿using datn_qlch_be.Core.DTOs;
 using datn_qlch_be.Core.Entities;
+<<<<<<< HEAD
 using datn_qlch_be.Core.Exceptions;
 using datn_qlch_be.Core.Interfaces.repository;
 using datn_qlch_be.Core.Interfaces.services;
 using Microsoft.AspNetCore.Http;
+=======
+using datn_qlch_be.Core.Interfaces.repository;
+using datn_qlch_be.Core.Interfaces.services;
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -21,12 +26,19 @@ namespace datn_qlch_be.Core.Services
     {
         readonly IEmployeeRepository _repository;
         readonly IConfiguration _configuration;
+<<<<<<< HEAD
         private readonly IHttpContextAccessor _httpContextAccessor;
         public EmployeeService(IEmployeeRepository repository, IConfiguration configuration, IHttpContextAccessor httpContextAccessor) : base(repository)
         {
             _repository = repository;
             _configuration = configuration;
             _httpContextAccessor = httpContextAccessor;
+=======
+        public EmployeeService(IEmployeeRepository repository, IConfiguration configuration) : base(repository)
+        {
+            _repository = repository;
+            _configuration = configuration;
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
         }
 
         /// <summary>
@@ -57,9 +69,13 @@ namespace datn_qlch_be.Core.Services
         {
             List<Claim> claims = new List<Claim>
             {
+<<<<<<< HEAD
                 new Claim(ClaimTypes.Name,value: employee.EmployeeName),
                 new Claim(ClaimTypes.Role,value: employee.Role),
                 new Claim(ClaimTypes.MobilePhone,value: employee.PhoneNumber)
+=======
+                new Claim(ClaimTypes.Name,value: employee.EmployeeName)
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
             };
 
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
@@ -69,13 +85,17 @@ namespace datn_qlch_be.Core.Services
             var token = new JwtSecurityToken(claims: claims, expires: DateTime.Now.AddDays(1), signingCredentials: credential);
 
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+<<<<<<< HEAD
 
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
             return jwt;
         }
 
         public Employee RegisterEmployee(EmployeeDto request)
         {
             Employee employee = new();
+<<<<<<< HEAD
             if (!string.IsNullOrEmpty(request.Password))
             {
                 employee = CreatePasswordHash(request.Password);
@@ -84,11 +104,18 @@ namespace datn_qlch_be.Core.Services
             {
                 ErrorMessages.Add(Resources.vn.EmployeeResource.PasswordIsRequire);
             }
+=======
+            if(!string.IsNullOrEmpty(request.Password))
+            {
+                employee = CreatePasswordHash(request.Password);
+            }
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
 
             //Map thuộc tính từ dto
             employee.EmployeeName = request.EmployeeName;
             employee.PhoneNumber = request.PhoneNumber;
             employee.Address = request.Address;
+<<<<<<< HEAD
             employee.Role = request.Role;
             if (Validate(Enum.ValidateMode.Insert, employee))
             {
@@ -98,6 +125,9 @@ namespace datn_qlch_be.Core.Services
             {
                 throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
             }
+=======
+            _repository.RegisterEmployee(employee);
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
             return employee;
         }
 
@@ -116,6 +146,7 @@ namespace datn_qlch_be.Core.Services
             {
                 ErrorMessages.Add(Resources.vn.EmployeeResource.PhoneNumberIsExisted);
             }
+<<<<<<< HEAD
             return ErrorMessages.Count <= 0;
         }
 
@@ -159,6 +190,9 @@ namespace datn_qlch_be.Core.Services
                 
                 throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
             }
+=======
+            return ErrorMessages.Count > 0 ? false : true;
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
         }
     }
 }

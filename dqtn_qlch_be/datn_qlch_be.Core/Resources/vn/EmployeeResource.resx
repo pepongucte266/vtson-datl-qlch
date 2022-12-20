@@ -120,18 +120,24 @@
   <data name="EmployeeNameIsRequire" xml:space="preserve">
     <value>Tên nhân viên không được để trống</value>
   </data>
+<<<<<<< HEAD
   <data name="PasswordInCorrect" xml:space="preserve">
     <value>Mật khẩu không đúng</value>
   </data>
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
   <data name="PasswordIsRequire" xml:space="preserve">
     <value>Mật khẩu không được để trống</value>
   </data>
   <data name="PhoneNumberIsExisted" xml:space="preserve">
     <value>Số điện thoại đã tồn tại</value>
   </data>
+<<<<<<< HEAD
   <data name="PhoneNumberIsNotExistInSystem" xml:space="preserve">
     <value>Số điện thoại không tồn tại trong hệ thống</value>
   </data>
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
   <data name="PhoneNumberIsRequire" xml:space="preserve">
     <value>Số điện thoại không được để trống</value>
   </data>

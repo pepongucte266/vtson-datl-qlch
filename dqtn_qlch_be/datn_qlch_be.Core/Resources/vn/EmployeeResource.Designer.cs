@@ -70,6 +70,7 @@ namespace datn_qlch_be.Core.Resources.vn {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to Mật khẩu không đúng.
         /// </summary>
         internal static string PasswordInCorrect {
@@ -79,6 +80,8 @@ namespace datn_qlch_be.Core.Resources.vn {
         }
         
         /// <summary>
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
         ///   Looks up a localized string similar to Mật khẩu không được để trống.
         /// </summary>
         internal static string PasswordIsRequire {
@@ -97,6 +100,7 @@ namespace datn_qlch_be.Core.Resources.vn {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Looks up a localized string similar to Số điện thoại không tồn tại trong hệ thống.
         /// </summary>
         internal static string PhoneNumberIsNotExistInSystem {
@@ -106,6 +110,8 @@ namespace datn_qlch_be.Core.Resources.vn {
         }
         
         /// <summary>
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
         ///   Looks up a localized string similar to Số điện thoại không được để trống.
         /// </summary>
         internal static string PhoneNumberIsRequire {

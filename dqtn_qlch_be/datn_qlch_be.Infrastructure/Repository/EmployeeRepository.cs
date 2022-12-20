@@ -14,6 +14,7 @@ namespace datn_qlch_be.Infrastructure.Repository
     {
         public EmployeeRepository(IConfiguration configuration): base(configuration) { }
 
+<<<<<<< HEAD
         public Employee GetEmployeeByPhoneNumber(string phoneNumber)
         {
             DynamicParameters parameters = new DynamicParameters();
@@ -22,6 +23,8 @@ namespace datn_qlch_be.Infrastructure.Repository
             return res;
         }
 
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
         public int RegisterEmployee(Employee employee)
         {
             DynamicParameters parameters = new DynamicParameters();

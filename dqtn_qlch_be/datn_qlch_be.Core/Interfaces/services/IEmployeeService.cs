@@ -14,8 +14,11 @@ namespace datn_qlch_be.Core.Interfaces.services
         bool VerifiPassword(string password, byte[] passwordHash, byte[] passwordSalt);
         string CreateToken(Employee employee);
         Employee RegisterEmployee(EmployeeDto employee);
+<<<<<<< HEAD
         string Login(EmployeeDto employee);
 
         Employee GetCurrentEmployee();
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
     }
 }   

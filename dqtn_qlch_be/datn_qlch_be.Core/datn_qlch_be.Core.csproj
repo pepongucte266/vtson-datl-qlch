@@ -12,7 +12,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.25.1" />
+<<<<<<< HEAD
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.6" />
+=======
+>>>>>>> a2420c4b2b22e57a2d91072034b6f0c119899d7b
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.1" />
   </ItemGroup>
 
