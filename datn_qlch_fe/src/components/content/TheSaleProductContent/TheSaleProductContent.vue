@@ -13,20 +13,40 @@
       <div class="the-sale-product-table">
         <v-row
           class="product-table-row"
-          v-for="item in curentInvoiceDetail"
+          v-for="item in curentInvoiceDetails"
           :key="item.InventoryItemID"
         >
-          <v-col class="product-code">{{ item.InventoryItemCode }}</v-col>
-          <v-col>{{ item.InventoryItemName }}</v-col>
-          <v-col>{{ item.Quantity }}</v-col>
-          <v-col>{{ item.UnitPrice }}</v-col>
-          <v-col>{{ item.Price }}</v-col>
+          <v-col class="product-cell product-code">{{ item.InventoryItemCode }}</v-col>
+          <v-col class="product-cell">{{ item.InventoryItemName }}</v-col>
+          <v-col class="product-cell">
+            <v-text-field
+              v-model="item.Quantity"
+              hide-details
+              single-line
+              type="number"
+              @input="changeProductQuantity(item,$event.target.value)"
+            />
+          </v-col>
+          <v-col class="product-cell">{{ item.InventoryItemPrice }}</v-col>
+          <v-col class="product-cell">{{ item.Amount }}</v-col>
+          <v-col class="product-cell">
+            <v-btn
+              color="error"
+              variant="plain"
+              @click="removeInventoryItemInInvoice(item)"
+            >
+              Delete
+            </v-btn>
+          </v-col>
         </v-row>
       </div>
     </div>
     <v-app-bar height="350" location="bottom" class="the-sale-product-list">
       <v-window v-model="onboarding" show-arrows="hover" v-if="dataPaging">
-        <v-window-item v-for="page,index in dataPaging" :key="`card-${index}`">
+        <v-window-item
+          v-for="(page, index) in dataPaging"
+          :key="`card-${index}`"
+        >
           <v-card
             elevation="2"
             height="350"
@@ -42,7 +62,7 @@
               @click="addInventoryItemToInvoice(inventoryItem)"
             >
               <v-img
-                :src="inventoryItem.InventoryItemImage"
+                :src="randomImage()"
                 max-height="115"
                 height="115"
                 class="grey darken-4"
@@ -55,7 +75,7 @@
         </v-window-item>
       </v-window>
       <v-window v-model="onboarding" show-arrows="hover" v-else>
-        <v-window-item >
+        <v-window-item>
           <v-card
             elevation="2"
             height="350"

@@ -11,6 +11,11 @@
     max-height: 400px;
     .product-table-row {
       margin: 0;
+      .product-cell {
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
       .product-code {
         overflow: hidden;
       }

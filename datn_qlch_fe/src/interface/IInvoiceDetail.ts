@@ -9,4 +9,5 @@ export default interface IInvoiceDetail extends IInventoryItem{
   UnitPrice: number;
   Amount: number;
   DiscountAmount: number;
+  InventoryItemPrice: number;
 }

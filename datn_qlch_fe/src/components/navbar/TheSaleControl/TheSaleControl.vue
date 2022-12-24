@@ -19,7 +19,7 @@
       <div class="invoice-info">
         <div class="invoice-amount d-flex justify-space-between ma-2">
           <span>Tổng tiền:</span>
-          <span>0</span>
+          <span>{{ currentInvoice?.Amount}}</span>
         </div>
         <div class="deposit-amount d-flex justify-space-between ma-2">
           <span>Đặt cọc:</span>

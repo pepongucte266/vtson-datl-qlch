@@ -12,7 +12,7 @@
             :style="{ cursor: 'pointer' }"
             :icon="mdiAccount"
           />
-          Username
+          Boss Sơn
           <v-icon
             class="ml-4"
             :icon="mdiApps"
