@@ -36,16 +36,16 @@ namespace datn_qlch_be.Core.Services
         /// <param name="sort"></param>
         /// <returns>TotalRecord: Tổng số bản ghi; TotalPage: Tổng số trang; Data: danh sách món ăn</returns>
         /// Created By: VTSON (22/07/2022) 
-        public object GetFilter(int? pageNumber, int? pageSise, string? where, string? sort)
-        {
-            object res = _repository.GetFilter(pageNumber, pageSise, where, sort);
-            IEnumerable<Food>? foods = res.GetType().GetProperty("Data").GetValue(res) as IEnumerable<Food>;
-            if (foods.Count() <= 0)
-            {
-                res = null;
-            }
-            return res;
-        }
+        //public object GetFilter(int? pageNumber, int? pageSise, string? where, string? sort)
+        //{
+        //    object res = _repository.GetFilter(pageNumber, pageSise, where, sort);
+        //    IEnumerable<Food>? foods = res.GetType().GetProperty("Data").GetValue(res) as IEnumerable<Food>;
+        //    if (foods.Count() <= 0)
+        //    {
+        //        res = null;
+        //    }
+        //    return res;
+        //}
 
         ///// <summary>
         ///// Thêm mới vào db

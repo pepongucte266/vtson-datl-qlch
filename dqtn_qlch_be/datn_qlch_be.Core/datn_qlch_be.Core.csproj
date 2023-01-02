@@ -27,6 +27,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EmployeeResource.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\vn\InventoryItemResource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>InventoryItemResource.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +42,10 @@
     <EmbeddedResource Update="Resources\vn\EmployeeResource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>EmployeeResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\vn\InventoryItemResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InventoryItemResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -58,6 +58,11 @@ builder.Services.AddScoped<IInventoryItemService, InventoryItemService>();
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+builder.Services.AddScoped<IInventoryItemUnitService, InventoryItemUnitService>();
+builder.Services.AddScoped<IInventoryItemUnitRepository, InventoryItemUnitRepository>();
+
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => {
         options.TokenValidationParameters = new TokenValidationParameters

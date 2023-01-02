@@ -42,10 +42,10 @@
       </div>
     </div>
     <v-app-bar height="350" location="bottom" class="the-sale-product-list">
-      <v-window v-model="onboarding" show-arrows="hover" v-if="dataPaging">
+      <v-window v-model="onboarding" show-arrows="hover" v-if="inventoryitems">
         <v-window-item
-          v-for="(page, index) in dataPaging"
-          :key="`card-${index}`"
+          v-for="page in totalPage"
+          :key="`card-${page}`"
         >
           <v-card
             elevation="2"
@@ -57,12 +57,12 @@
               height="145"
               width="235"
               class="d-flex flex-column justify-space-between ma-2 rounded-lg"
-              v-for="inventoryItem in page"
+              v-for="inventoryItem in inventoryitems"
               :key="inventoryItem.InventoryItemID"
               @click="addInventoryItemToInvoice(inventoryItem)"
             >
               <v-img
-                :src="randomImage()"
+                :src="inventoryItem.InventoryItemImage"
                 max-height="115"
                 height="115"
                 class="grey darken-4"
@@ -86,7 +86,6 @@
         </v-window-item>
       </v-window>
     </v-app-bar>
-  </div>
+  </div>  
 </template>
 <script src="./TheSaleProductContent.ts" lang="ts"></script>
->

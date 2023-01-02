@@ -2,6 +2,8 @@ import { defineStore } from "pinia";
 import type IInventoryItem from "@/interface/IInventoryItem";
 import axios from "axios";
 import CONFIG from "@/common/config";
+import InventoryItemService from "@/services/InventoryItemService";
+import type IResultPagging from "@/interface/IResultPagging";
 export const useInventoryItemStore = defineStore("inventoryItem", {
   state: () => ({
     inventoryItemList: [] as IInventoryItem[],
@@ -46,15 +48,8 @@ export const useInventoryItemStore = defineStore("inventoryItem", {
     async getInventoryItemListPaging(
       page: number,
       pageSize: number
-    ): Promise<IInventoryItem[]> {
-      let start = page == 1 ? 0 : pageSize * (page - 1);
-      let end = pageSize * page;
-
-      var result = [];
-      while (start < end) {
-        result.push(this.inventoryItemList[start]);
-        start++;
-      }
+    ): Promise<IResultPagging<IInventoryItem[]>> {
+      var result = await InventoryItemService.getInventoryItemPagging(page, pageSize, "", "");
       return result;
     },
   },

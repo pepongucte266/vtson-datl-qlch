@@ -121,27 +121,35 @@ namespace datn_qlch_be.Core.Services
 
         public string Login(EmployeeDto request)
         {
+            var isValidate = true;
             if (string.IsNullOrEmpty(request.Password))
             {
-                return Resources.vn.EmployeeResource.PasswordIsRequire;
+                isValidate = false;
+                ErrorMessages.Add(Resources.vn.EmployeeResource.PasswordIsRequire);
             }
             if (!Repository.IsExistByValue("PhoneNumber", request.PhoneNumber))
             {
-                return Resources.vn.EmployeeResource.PhoneNumberIsNotExistInSystem;
+                isValidate = false;
+                ErrorMessages.Add(Resources.vn.EmployeeResource.PhoneNumberIsNotExistInSystem);
+                throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
             }
 
             Employee employee = _repository.GetEmployeeByPhoneNumber(request.PhoneNumber);
             string token;
-            if (VerifiPassword(request.Password, employee.PasswordHash!, employee.PasswordSalt!))
+            if (!VerifiPassword(request.Password, employee.PasswordHash!, employee.PasswordSalt!))
+            {
+                isValidate = false;
+                ErrorMessages.Add(Resources.vn.EmployeeResource.PasswordInCorrect);
+            }
+            if (isValidate)
             {
                 token = CreateToken(employee);
+                return token;
             }
             else
             {
-                token = Resources.vn.EmployeeResource.PasswordInCorrect;
+                throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
             }
-
-            return token;
         }
 
         public Employee GetCurrentEmployee()
@@ -156,7 +164,7 @@ namespace datn_qlch_be.Core.Services
             }
             else
             {
-                
+
                 throw new MISAValidateException(Resources.ResourceVN.VN_HaveAnErrorOccurred, ErrorMessages);
             }
         }

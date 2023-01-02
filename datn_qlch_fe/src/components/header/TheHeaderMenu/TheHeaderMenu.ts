@@ -1,5 +1,5 @@
 import { defineComponent, ref, computed } from "vue";
-import { mdiApps } from "@mdi/js";
+import { mdiApps, mdiCogOutline, mdiLogout } from "@mdi/js";
 export default defineComponent({
   props: {
     showPopupHeaderMenu: Boolean,
@@ -36,14 +36,14 @@ export default defineComponent({
         link: "/",
       },
       {
-        name: "Thu chi",
-        icon: mdiApps,
-        link: "/",
+        name: "Quản lý",
+        icon: mdiCogOutline,
+        link: "/inventory",
       },
       {
-        name: "Thu chi",
-        icon: mdiApps,
-        link: "/",
+        name: "Đăng xuất",
+        icon: mdiLogout,
+        link: "/login",
       },
     ]);
     return {

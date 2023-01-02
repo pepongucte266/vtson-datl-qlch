@@ -1,0 +1,15 @@
+.inventory-content {
+  border-top: 1px solid #000;
+  .inventory-header {
+    font-size: 26px;
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .inventory-table-btn-delete {
+    cursor: pointer;
+  }
+}

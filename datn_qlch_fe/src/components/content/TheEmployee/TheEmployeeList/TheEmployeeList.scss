@@ -1,0 +1,15 @@
+.employee-content {
+  border-top: 1px solid #000;
+  .employee-header {
+    font-size: 26px;
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .employee-table-btn-delete {
+    cursor: pointer;
+  }
+}

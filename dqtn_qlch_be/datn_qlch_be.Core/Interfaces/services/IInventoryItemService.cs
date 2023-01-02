@@ -9,5 +9,6 @@ namespace datn_qlch_be.Core.Interfaces.services
 {
     public interface IInventoryItemService: IBaseService<InventoryItem>
     {
+        int InsertInventoryItem(InventoryItem item);
     }
 }

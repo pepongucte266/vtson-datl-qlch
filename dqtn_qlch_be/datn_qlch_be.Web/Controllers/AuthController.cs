@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace datn_qlch_be.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     [Authorize]
     public class AuthController : ControllerBase

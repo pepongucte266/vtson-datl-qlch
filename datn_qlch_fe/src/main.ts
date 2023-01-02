@@ -1,3 +1,4 @@
+//Pinia
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 // Vuetify
@@ -6,11 +7,10 @@ import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
-
 //Axios
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
+//Router
 import App from "./App.vue";
 import router from "./router";
 
